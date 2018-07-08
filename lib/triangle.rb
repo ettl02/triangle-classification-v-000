@@ -9,10 +9,14 @@ attr_reader :s1, :s2, :s3
   end
 
 def kind
-  if (@s1 * @s2 * @s3) == 0 || (@s1 + @s2) <= @s3 || (@s2 + @s3) <= @s1 || (@s3 + @s1) <= @s2
-
-    raise TriangleError
-
+  if (s1 * s2 * s3) == 0 || (s1 + s2) <= s3 || (s2 + s3) <= s1 || (s3 + s1) <= s2
+    begin 
+      raise TriangleError
+        puts error.message
+      end 
+  elsif 
+    
+    
   end
 
   class TriangleError < StandardError
