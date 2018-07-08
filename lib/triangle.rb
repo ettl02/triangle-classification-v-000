@@ -10,13 +10,17 @@ attr_reader :s1, :s2, :s3
 
 def kind
   if (s1 * s2 * s3) == 0 || (s1 + s2) <= s3 || (s2 + s3) <= s1 || (s3 + s1) <= s2
-    begin 
+    begin
       raise TriangleError
         puts error.message
-      end 
-  elsif 
-    
-    
+      end
+  elsif s1 == s2 && s1 == s3
+    self.kind = :equilateral 
+
+  elsif s1 == s2 || s1 == s3 || s2 == s3
+    self.kind = :isosceles
+
+
   end
 
   class TriangleError < StandardError
